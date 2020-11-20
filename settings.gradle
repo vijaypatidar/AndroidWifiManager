@@ -1,0 +1,3 @@
+include ':APManager'
+include ':app'
+rootProject.name = "WifiManager"

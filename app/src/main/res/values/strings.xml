@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WifiManager</string>
+    <string name="turnoff_ap">Turn Off AP</string>
+    <string name="turn_on_ap">Turn On AP</string>
+</resources>
