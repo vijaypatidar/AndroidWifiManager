@@ -25,6 +25,14 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 
+/**
+ * <h1>APManager - Access Point Manager</h1>
+ * <P>
+ *     APManager is a singleton utility class that help to create mobile hotspot on android device
+ *     programmatically , without taking care of android version and permission requires
+ *     needed to do the same.It supports android 5.0 and later android version.
+ * </P>
+ */
 public class APManager {
     private static APManager apManager;
     private final Utils utils;
@@ -35,6 +43,10 @@ public class APManager {
         this.utils = new Utils();
     }
 
+    /**
+     * @param context should not be null
+     * @return APManager
+     */
     public static APManager getApManager(@NonNull Context context) {
         if (apManager == null) {
             apManager = new APManager(context);
@@ -45,14 +57,25 @@ public class APManager {
     private String ssid;
     private String password;
 
+    /**
+     * get ssid of recently created hotspot
+     * @return SSID
+     */
     public String getSSID() {
         return ssid;
     }
 
+    /**
+     * get password of recently created hotspot
+     * @return PASSWORD
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Some android version requires gps provider to be in active mode to create access point (Hotspot).
+     */
     public static final int ERROR_GPS_PROVIDER_DISABLED = 0;
     public static final int ERROR_LOCATION_PERMISSION_DENIED = 4;
     public static final int ERROR_DISABLE_HOTSPOT = 1;
