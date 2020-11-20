@@ -1,8 +1,10 @@
 name: Publish Bintray
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: [ main ]
+    pull_request:
+      branches: [ main ]
 jobs:
   publish:
     runs-on: ubuntu-latest

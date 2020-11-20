@@ -196,7 +196,7 @@ public class APManager {
     }
 
     public interface OnSuccessListener {
-        void onSuccess(String ssid, String password);
+        void onSuccess(@NonNull String ssid,@NonNull String password);
     }
 
     private String getRandomPassword() {

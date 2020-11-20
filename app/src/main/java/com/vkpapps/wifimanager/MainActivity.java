@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.vkpapps.apmanager.APManager;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements APManager.OnSucce
 
 
     @Override
-    public void onSuccess(String ssid, String password) {
+    public void onSuccess(@NonNull String ssid, @NonNull String password) {
         Toast.makeText(this, ssid + "," + password, Toast.LENGTH_LONG).show();
         startActivity(new Intent(this, APDetailActivity.class));
     }
