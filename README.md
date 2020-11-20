@@ -4,25 +4,40 @@ APManager is a singleton utility class that help to create mobile hotspot on and
 
 # Download
 #### Step 1 : Add the JitPack repository to your build file
-Gradle:
+
 ```gradle
 allprojects {
     repositories {
         ...
-        mavenLocal()
+        jcenter()
     }
 }
 ```
 
 #### Step 2 : Add the dependency
-
-Gradle:
 ```gradle
 dependencies {
     implementation 'com.vkpapps.wifimanager:APManager:1.0.0'
 }
 ```
-    
+# Example
+```java
+APManager apManager = APManager.getApManager(this);
+apManager.turnOnHotspot(this, new APManager.OnSuccessListener() {
+    @Override
+    public void onSuccess(String ssid, String password) {
+        //write your logic
+    }
+}, new APManager.OnFailureListener() {
+    @Override
+    public void onFailure(int failureCode, @Nullable Exception e) {
+        //handle error like give access to location permission,write system setting permission,
+        //disconnect wifi,turn off already created hotspot,enable GPS provider
+        
+        //or use DefaultFailureListener class to handle automatically
+    }
+});
+```
 # License
 Apache License
 
