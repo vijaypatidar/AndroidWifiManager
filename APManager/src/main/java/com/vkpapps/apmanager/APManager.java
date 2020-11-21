@@ -176,7 +176,7 @@ public class APManager {
         }
     }
 
-    public boolean isWifiApEnabled() {
+    private boolean isWifiApEnabled() {
         try {
             Method method = wifiManager.getClass().getMethod("isWifiApEnabled");
             return (boolean) method.invoke(wifiManager);

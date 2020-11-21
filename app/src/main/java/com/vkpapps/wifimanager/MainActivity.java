@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements APManager.OnSucce
                     this,
                     new DefaultFailureListener(this)
             );
+
         });
     }
 

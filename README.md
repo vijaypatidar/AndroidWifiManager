@@ -1,4 +1,4 @@
-![Download](logo.png)
+<img src="logo.png" alt="drawing" width="200" /><br><br>
 ![Publish Bintray](https://github.com/vijaypatidar/AndroidWifiManager/workflows/Publish%20Bintray/badge.svg)[ ![Download](https://api.bintray.com/packages/vijaypatidar/AndroidWifiManager/APManager/images/download.svg?version=1.0.0) ](https://bintray.com/vijaypatidar/AndroidWifiManager/APManager/1.0.0/link)
 # APManager - Access Point Manager
 APManager is a singleton utility class that help to create mobile hotspot on android device programmatically , without taking care of android version and permission requires to do the same.It supports android 5.0 and later android version.
@@ -21,7 +21,7 @@ dependencies {
     implementation 'com.vkpapps.wifimanager:APManager:1.0.0'
 }
 ```
-# Example
+# Step 3 : Use in your app
 ```java
 APManager apManager = APManager.getApManager(this);
 apManager.turnOnHotspot(this, new APManager.OnSuccessListener() {
@@ -42,6 +42,9 @@ apManager.turnOnHotspot(this, new APManager.OnSuccessListener() {
     }
 
 });
+
+//use this line to turn off Hotspot
+//apManager.disableWifiAp();
 ```
 # License
 ```txt
