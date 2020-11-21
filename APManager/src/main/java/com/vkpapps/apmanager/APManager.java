@@ -95,7 +95,7 @@ public class APManager {
     public void turnOnHotspot(Context context, OnSuccessListener onSuccessListener, OnFailureListener onFailureListener) {
         boolean providerEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
-        if (wifiManager.getDhcpInfo().ipAddress != 0) {
+        if (isDeviceConnectedToWifi()) {
             onFailureListener.onFailure(ERROR_DISABLE_WIFI,null);
             return;
         }
@@ -176,7 +176,7 @@ public class APManager {
         }
     }
 
-    private boolean isWifiApEnabled() {
+    public boolean isWifiApEnabled() {
         try {
             Method method = wifiManager.getClass().getMethod("isWifiApEnabled");
             return (boolean) method.invoke(wifiManager);
@@ -186,9 +186,22 @@ public class APManager {
         return false;
     }
 
+    /**
+     * Utility method to check device wifi is enabled and connected to any access point.
+     *
+     * @return connection status of wifi
+     */
+    public boolean isDeviceConnectedToWifi() {
+        return wifiManager.getDhcpInfo().ipAddress != 0;
+    }
+
     private void setWifiApEnabled(WifiConfiguration wifiConfiguration, boolean enable) throws Exception {
         Method method = wifiManager.getClass().getMethod("setWifiApEnabled", WifiConfiguration.class, boolean.class);
         method.invoke(wifiManager, wifiConfiguration, enable);
+    }
+
+    public WifiManager getWifiManager() {
+        return wifiManager;
     }
 
     public interface OnFailureListener {

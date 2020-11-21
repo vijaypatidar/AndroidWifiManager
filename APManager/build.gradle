@@ -4,8 +4,8 @@ plugins {
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 ext{
-    VERSION_CODE = 1
-    VERSION_NAME = "1.0.0"
+    VERSION_CODE = 2
+    VERSION_NAME = "1.0.1"
 }
 android {
     compileSdkVersion 30
