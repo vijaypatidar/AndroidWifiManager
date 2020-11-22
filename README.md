@@ -1,5 +1,5 @@
 <img src="logo.png" alt="drawing" width="200" /><br><br>
-![Publish Bintray](https://github.com/vijaypatidar/AndroidWifiManager/workflows/Publish%20Bintray/badge.svg)[ ![Download](https://api.bintray.com/packages/vijaypatidar/AndroidWifiManager/APManager/images/download.svg?version=1.0.0) ](https://bintray.com/vijaypatidar/AndroidWifiManager/APManager/1.0.0/link)
+![Publish Bintray](https://github.com/vijaypatidar/AndroidWifiManager/workflows/Publish%20Bintray/badge.svg)[ ![Download](https://api.bintray.com/packages/vijaypatidar/AndroidWifiManager/APManager/images/download.svg) ](https://bintray.com/vijaypatidar/AndroidWifiManager/APManager)
 # APManager - Access Point Manager
 APManager is a library that help to create mobile hotspot on android device programmatically , without taking care of android version and permission requires to do the same.It supports android 5.0 and later android version.
 
